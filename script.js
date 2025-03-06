@@ -47,3 +47,15 @@ async function getQuotes() {
 
 //Load
 getQuotes();
+
+facebookBtn.addEventListener('click', () => {
+    const quote = quoteText.textContent;
+    const author = authorText.textContent;
+
+    const shareUrl = `https://fagerdahl.github.io/quote-templates/?quote=${encodeURIComponent(quote)}&author=${encodeURIComponent(author)}`;
+    const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+    window.open(fbShareUrl, '_blank');
+});
+
+
